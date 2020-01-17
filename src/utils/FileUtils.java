@@ -34,7 +34,6 @@ public class FileUtils {
             e.printStackTrace();
         }
     }
-
     /**
      * 从txt文件读取matrix
      * @param path
@@ -68,4 +67,5 @@ public class FileUtils {
 
         return result;
     }
+
 }

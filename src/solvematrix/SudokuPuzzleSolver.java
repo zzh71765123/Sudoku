@@ -32,9 +32,6 @@ public class SudokuPuzzleSolver {
      */
     private void backTrace(int i, int j) {
         if (i == 8 && j == 9) {
-            //已经成功了，打印数组即可
-            System.out.println("获取正确解");
-            FormatUtils.printArray(matrix);
             FileUtils.writeToTXT(FileUtils.PATH,"获得正确解\n",FileUtils.SOLVE);
             FileUtils.writeToTXT(FileUtils.PATH,FormatUtils.formatArray(matrix),FileUtils.SOLVE);
             return;

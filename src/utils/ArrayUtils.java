@@ -1,5 +1,8 @@
 package utils;
 
+/**
+ * Array工具类
+ */
 public class ArrayUtils {
 
     /**

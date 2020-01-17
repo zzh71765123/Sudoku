@@ -36,7 +36,7 @@ public class Solution {
                         return;
                     case "-s":
                         System.out.println("-s");
-                        ArrayList<int[][]> matrixs = FileUtils.readMatrixFromTxt(FileUtils.PATH, FileUtils.MATRIX);
+                        ArrayList<int[][]> matrixs = FileUtils.readMatrixFromTxt(args[1], FileUtils.MATRIX);
 
                         for (int[][] matrix : matrixs) {
                             SudokuPuzzleSolver
