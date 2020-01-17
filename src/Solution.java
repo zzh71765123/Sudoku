@@ -26,6 +26,7 @@ public class Solution {
                                 FileUtils.writeToTXT(FileUtils.PATH, FormatUtils.formatArray(generator
                                         .createSampleArray()
                                         .generateSudokuArray()
+                                        .formatMatrix()
                                         .createEmptySpace()
                                         .build()), FileUtils.MATRIX);
                             }
@@ -35,7 +36,6 @@ public class Solution {
 
                         return;
                     case "-s":
-                        System.out.println("-s");
                         ArrayList<int[][]> matrixs = FileUtils.readMatrixFromTxt(args[1], FileUtils.MATRIX);
 
                         for (int[][] matrix : matrixs) {
