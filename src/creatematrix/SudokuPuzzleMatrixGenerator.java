@@ -44,9 +44,9 @@ public class SudokuPuzzleMatrixGenerator {
      */
     public SudokuPuzzleMatrixGenerator createEmptySpace(){
         Random r = new Random();
-        Integer emptyNum = r.nextInt(12);
-        Integer x;
-        Integer y;
+        int emptyNum = r.nextInt(20);
+        int x;
+        int y;
         for(int i = 0 ; i < emptyNum ; i++){
             x = r.nextInt(8);
             y = r.nextInt(8);
