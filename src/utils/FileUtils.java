@@ -7,6 +7,10 @@ import java.util.ArrayList;
  * 文件工具类
  */
 public class FileUtils {
+
+    public static final String PATH = "C:/Users/Shinelon/Desktop/AcmCode";
+    public static final String MATRIX = "matrix.txt";
+    public static final String SOLVE = "solve.txt";
     /**
      * 写入txt文件
      * @param path
@@ -38,8 +42,8 @@ public class FileUtils {
      * @return
      * @throws IOException
      */
-    public static ArrayList<Integer[][]> readMatrixFromTxt(String path,String fileName) throws IOException {
-        ArrayList<Integer[][]> result = new ArrayList<>();
+    public static ArrayList<int[][]> readMatrixFromTxt(String path, String fileName) throws IOException {
+        ArrayList<int[][]> result = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(path+"/"+fileName));
 
         String temp = br.readLine();
@@ -53,10 +57,10 @@ public class FileUtils {
         int index = 0;
         for (String s : matrixs) {
             index = 0;
-            Integer[][] matrix = new Integer[9][9];
+            int[][] matrix = new int[9][9];
             for(int i = 0 ; i < 9 ; i++){
                 for(int j = 0 ; j < 9 ; j++){
-                    matrix[i][j] = (int) s.charAt(index++);
+                    matrix[i][j] = s.charAt(index++) - '0';
                 }
             }
             result.add(matrix);

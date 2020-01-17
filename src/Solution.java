@@ -1,5 +1,6 @@
 import creatematrix.SudokuPuzzleMatrixGenerator;
 import exception.WrongArgsException;
+import solvematrix.SudokuPuzzleSolver;
 import utils.FileUtils;
 import utils.FormatUtils;
 
@@ -20,9 +21,13 @@ public class Solution {
                     case "-c":
                         Integer num = Integer.valueOf(args[1]);
                         if (num > 0) {
-                            String path = "C:/Users/Shinelon/Desktop/AcmCode";
                             for (int i = 0; i < num; i++) {
-                                FileUtils.writeToTXT(path, FormatUtils.formatArray(new SudokuPuzzleMatrixGenerator().generateSudokuArray().createEmptySpace().build()),"test.txt");
+                                SudokuPuzzleMatrixGenerator generator = new SudokuPuzzleMatrixGenerator();
+                                FileUtils.writeToTXT(FileUtils.PATH, FormatUtils.formatArray(generator
+                                        .createSampleArray()
+                                        .generateSudokuArray()
+                                        .createEmptySpace()
+                                        .build()), FileUtils.MATRIX);
                             }
                         } else {
                             throw new WrongArgsException();
@@ -31,7 +36,14 @@ public class Solution {
                         return;
                     case "-s":
                         System.out.println("-s");
-                        ArrayList<Integer[][]> matrixs = FileUtils.readMatrixFromTxt("C:/Users/Shinelon/Desktop/AcmCode","test.txt");
+                        ArrayList<int[][]> matrixs = FileUtils.readMatrixFromTxt(FileUtils.PATH, FileUtils.MATRIX);
+
+                        for (int[][] matrix : matrixs) {
+                            SudokuPuzzleSolver
+                                    .create()
+                                    .initMatrix(matrix)
+                                    .solve();
+                        }
                         return;
                     default:
                         System.out.println("default");

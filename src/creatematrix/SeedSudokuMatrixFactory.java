@@ -1,5 +1,7 @@
 package creatematrix;
 
+import utils.ArrayUtils;
+
 import java.util.Random;
 
 /**
@@ -49,6 +51,6 @@ public final class SeedSudokuMatrixFactory {
      */
     public static int[][] retrieveSeedSudokuArrayByRandom() {
         int randomInt = new Random().nextInt(seedSudokuArrays.length);
-        return seedSudokuArrays[randomInt].clone();
+        return ArrayUtils.cloneArray(seedSudokuArrays[randomInt]);
     }
 }
