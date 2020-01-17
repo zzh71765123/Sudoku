@@ -1,3 +1,5 @@
+package creatematrix;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -12,6 +14,10 @@ public class SudokuPuzzleMatrixGenerator {
     private int[][] sampleArray = SeedSudokuMatrixFactory
             .retrieveSeedSudokuArrayByRandom();
 
+    /**
+     * 交换
+     * @return
+     */
     public SudokuPuzzleMatrixGenerator generateSudokuArray() {
         List<Integer> randomList = buildRandomList();
         for (int i = 0; i < 9; i++) {
@@ -27,6 +33,10 @@ public class SudokuPuzzleMatrixGenerator {
         return this;
     }
 
+    /**
+     * 挖空
+     * @return
+     */
     public SudokuPuzzleMatrixGenerator createEmptySpace(){
         Random r = new Random();
         Integer x;

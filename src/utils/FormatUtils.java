@@ -19,6 +19,11 @@ public class FormatUtils {
         System.out.println("_");
     }
 
+    /**
+     * 格式化输出的matrix
+     * @param grids
+     * @return
+     */
     public static String formatArray(int[][] grids){
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 9; i++) {

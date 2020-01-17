@@ -1,5 +1,10 @@
+package creatematrix;
+
 import java.util.Random;
 
+/**
+ * 种子工厂
+ */
 public final class SeedSudokuMatrixFactory {
 
     private static final int seedSudokuArrays[][][] = {

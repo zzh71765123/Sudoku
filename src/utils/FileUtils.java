@@ -7,6 +7,12 @@ import java.util.ArrayList;
  * 文件工具类
  */
 public class FileUtils {
+    /**
+     * 写入txt文件
+     * @param path
+     * @param str
+     * @param fileName
+     */
     public static void writeToTXT(String path,String str,String fileName){
         FileOutputStream o = null;
         byte[] buff = new byte[]{};
@@ -25,6 +31,13 @@ public class FileUtils {
         }
     }
 
+    /**
+     * 从txt文件读取matrix
+     * @param path
+     * @param fileName
+     * @return
+     * @throws IOException
+     */
     public static ArrayList<Integer[][]> readMatrixFromTxt(String path,String fileName) throws IOException {
         ArrayList<Integer[][]> result = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(path+"/"+fileName));
