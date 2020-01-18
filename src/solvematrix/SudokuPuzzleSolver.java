@@ -11,6 +11,8 @@ public class SudokuPuzzleSolver {
 
     private int[][] matrix;
 
+    private boolean result = false;
+
     public static SudokuPuzzleSolver create(){
         return new SudokuPuzzleSolver();
     }
@@ -22,6 +24,9 @@ public class SudokuPuzzleSolver {
 
     public SudokuPuzzleSolver solve(){
         this.backTrace(0,0);
+        if(result==false){
+            FileUtils.writeToTXT(FileUtils.PATH,"无解",FileUtils.SOLVE);
+        }
         return this;
     }
     /**
@@ -34,6 +39,7 @@ public class SudokuPuzzleSolver {
         if (i == 8 && j == 9) {
             FileUtils.writeToTXT(FileUtils.PATH,"获得正确解\n",FileUtils.SOLVE);
             FileUtils.writeToTXT(FileUtils.PATH,FormatUtils.formatArray(matrix),FileUtils.SOLVE);
+            result = true;
             return;
         }
 

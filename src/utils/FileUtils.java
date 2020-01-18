@@ -55,11 +55,18 @@ public class FileUtils {
         String[] matrixs = sb.toString().replaceAll("\n","").split("_");
         int index = 0;
         for (String s : matrixs) {
+            if(s.length()!=81){
+                throw new IOException();
+            }
             index = 0;
             int[][] matrix = new int[9][9];
             for(int i = 0 ; i < 9 ; i++){
                 for(int j = 0 ; j < 9 ; j++){
-                    matrix[i][j] = s.charAt(index++) - '0';
+                    char tempChar = s.charAt(index++);
+                    if(tempChar<'0'||tempChar>'9'){
+                        throw new IOException();
+                    }
+                    matrix[i][j] = tempChar - '0';
                 }
             }
             result.add(matrix);

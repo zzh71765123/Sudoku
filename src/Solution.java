@@ -57,7 +57,7 @@ public class Solution {
             System.out.println("请输入正确的参数");
             return;
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("数独矩阵错误，请检查矩阵是否合法");
         }
     }
 }
